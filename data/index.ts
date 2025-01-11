@@ -108,72 +108,6 @@ export const navItems = [
     },
   ];
   
-  export const testimonials = [
-    {
-      quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-  ];
-  
-  export const companies = [
-    {
-      id: 1,
-      name: "cloudinary",
-      img: "/cloud.svg",
-      nameImg: "/cloudName.svg",
-    },
-    {
-      id: 2,
-      name: "appwrite",
-      img: "/app.svg",
-      nameImg: "/appName.svg",
-    },
-    {
-      id: 3,
-      name: "HOSTINGER",
-      img: "/host.svg",
-      nameImg: "/hostName.svg",
-    },
-    {
-      id: 4,
-      name: "stream",
-      img: "/s.svg",
-      nameImg: "/streamName.svg",
-    },
-    {
-      id: 5,
-      name: "docker.",
-      img: "/dock.svg",
-      nameImg: "/dockerName.svg",
-    },
-  ];
-  
   export const workExperience = [
     {
       id: 1,
@@ -186,14 +120,14 @@ export const navItems = [
       id: 2,
       title: "Noesys Software - Data Analyst",
       desc: "Developed an LLM-driven email system with Hugging Face's LLaMA for context-aware communication, and built a web scraper Chrome extension with automated workflows and data analytics for optimized decision-making.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2", 
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
       title: "SkillDzire - Intern",
       desc: "Executed offensive operations with tools like Metasploit, Wireshark, and Nmap, and gained expertise in defensive techniques, including SIEM threat correlation, log analysis, and incident response.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2", 
       thumbnail: "/exp3.svg",
     },
     {
@@ -213,7 +147,7 @@ export const navItems = [
     },
     {
       id: 2,
-      link:"www.linkedin.com/in/pradhyumna-s-62956425b",
+      link:"https://www.linkedin.com/in/pradhyumna-s-62956425b",
       img: "/link.svg",
     },
   ];
