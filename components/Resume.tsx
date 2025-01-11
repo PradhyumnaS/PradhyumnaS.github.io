@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import MagicButton from './ui/MagicButton';
 import { GrDocumentText } from "react-icons/gr";

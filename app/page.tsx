@@ -1,3 +1,5 @@
+"use client";
+
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
@@ -7,7 +9,6 @@ import Resume from "@/components/Resume";
 import Skills from "@/components/Skills";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
-import { FaHome } from "react-icons/fa";
 
 export default function Home() {
   return (
