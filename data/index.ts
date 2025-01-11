@@ -213,7 +213,7 @@ export const navItems = [
     },
     {
       id: 2,
-      link:"www.linkedin.com/in/pradhyumna-s-62956425b",
+      link:"https://www.linkedin.com/in/pradhyumna-s-62956425b",
       img: "/link.svg",
     },
   ];
