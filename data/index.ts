@@ -118,7 +118,7 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "Noesys Software - Data Analyst",
+      title: "Noesys Software - Intern",
       desc: "Developed an LLM-driven email system with Hugging Face's LLaMA for context-aware communication, and built a web scraper Chrome extension with automated workflows and data analytics for optimized decision-making.",
       className: "md:col-span-2", 
       thumbnail: "/exp2.svg",
