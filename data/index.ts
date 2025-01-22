@@ -100,10 +100,10 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "ChronoSphere",
-      des: "Built with Next.js, Firebase, and Tailwind CSS, ChronoSphere blends cutting-edge web tech to create personalized time capsules unlocked by celestial events.",
-      img: "/fullstack.png",
-      iconLists: ["/nextjs.jpg", "/tail.svg", "/ts.svg", "/firebase.png", "/shadcn.png"],
+      title: "Autonomous Drone Navigation via Deep Reinforcement Learning",
+      des: "Developed autonomous drone navigation using PPO in PyBullet, achieving 90% success in dynamic obstacle avoidance and target acquisition with 3D state-space, continuous actions, and adaptive rewards.",
+      img: "/drone.png",
+      iconLists: ["/pybullet.jpg", "/sb3.jpg", "/python.svg"],
       link: "",
     },
   ];
@@ -132,8 +132,8 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "OctaNet Services - Developer Intern",
-      desc: "Engineered scalable Python applications using OOP principles and advanced libraries like NumPy and Pandas to automate data processing and enhance computational workflows.",
+      title: "MathWorks - Intern",
+      desc: "Applied advanced image processing and MATLAB-based deep learning models to enhance accuracy and efficiency in image recognition tasks.",
       className: "md:col-span-2",
       thumbnail: "/exp4.svg",
     },
