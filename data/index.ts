@@ -100,9 +100,9 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Autonomous Drone Navigation via Deep Reinforcement Learning",
-      des: "Developed autonomous drone navigation using PPO in PyBullet, achieving 90% success in dynamic obstacle avoidance and target acquisition with 3D state-space, continuous actions, and adaptive rewards.",
-      img: "/drone.jpeg",
+      title: "Drone Swarm Search and Rescue using RL",
+      des: "Developed a multi-agent PPO-based reinforcement learning model to optimize drone swarm behavior for efficient, battery-aware search-and-rescue in dynamic, obstacle-laden environments.",
+      img: "/srdrone.png",
       iconLists: ["/pybullet.jpg", "/sb3.jpg", "/python.svg"],
       link: "",
     },
@@ -112,7 +112,7 @@ export const navItems = [
     {
       id: 1,
       title: "RootsGoods - AI Intern",
-      desc: "Building an ML pipeline with OpenCV, YOLO, and sklearn for data analysis and quality assessment, while developing domain-specific LLMs using Transformers and LoRA for specialized solutions.",
+      desc: "Engineered a multi-agent LLM system with RAG for dynamic, multilingual interactions and optimized multimodal models like Florence-2 for visual-linguistic tasks with advanced image processing.",
       className: "md:col-span-2",
       thumbnail: "null",
     },

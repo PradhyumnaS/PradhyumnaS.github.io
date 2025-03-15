@@ -19,7 +19,7 @@ const Resume = () => {
           <p className="text-gray-400 text-lg max-w-md">
             Here's a link to my full resume with all my experience, skills and certifications in detail.
           </p>
-          <a href="https://drive.google.com/file/d/1Ct-pydDxCdDgQqiJCyHuj_E8EBy_Mwn3/view?usp=share_link" 
+          <a href="https://drive.google.com/file/d/1H--PIbAd9cJ-hIDi7WhBRVBxLcc-kyMH/view?usp=share_link" 
              target="_blank"
              rel="noopener noreferrer"
              className="inline-block">
