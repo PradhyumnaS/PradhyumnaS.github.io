@@ -1,89 +1,200 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Stacked work spreads only where there is room for them. */
+@custom-variant stack (@media (min-width: 1024px) and (min-height: 760px));
+@custom-variant hover-fine (@media (hover: hover) and (pointer: fine));
+
+@theme {
+  --color-ink: #070707;
+  --color-ink-2: #0d0d0c;
+  --color-ink-3: #151513;
+  --color-bone: #ece7de;
+  --color-ash: #8f8a82;
+  --color-smoke: #57534d;
+  --color-line: #23211e;
+  --color-vermilion: #ff3b1f;
+
+  --font-serif: var(--font-instrument), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 13%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 13%;
-    --muted-foreground: 0 0% 63%;
-
-    --accent: 0 0% 13%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 13%;
-    --input: 0 0% 13%;
-    --ring: 0 0% 83%;
-
-    --radius: 0.5rem;
+    color-scheme: dark;
+    --gutter: clamp(1rem, 3.2vw, 3rem);
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+  /* The issue is set a size smaller on larger screens — more air, finer type. */
+  html {
+    font-size: 100%;
   }
-}
-
-@layer base {
-  * {
-    @apply border-border !scroll-smooth;
+  @media (min-width: 768px) {
+    html {
+      font-size: 87.5%;
+    }
   }
+
+  html {
+    background: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--color-smoke) var(--color-ink);
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
-  button {
-    @apply active:outline-none;
+
+  ::selection {
+    background: var(--color-vermilion);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--color-vermilion);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  html.is-loading {
+    overflow: hidden;
+  }
+
+  html.has-cursor,
+  html.has-cursor * {
+    cursor: none !important;
   }
 }
 
-@layer utilities {
-  .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+@layer components {
+  .gutter {
+    padding-inline: var(--gutter);
   }
 
-  .black-gradient {
-    background: linear-gradient(90deg, #0a0a0a 0%, #1a1a1a 100%);
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--color-line);
+  }
+
+  .leader {
+    background-image: radial-gradient(circle, var(--color-smoke) 1px, transparent 1.4px);
+    background-size: 8px 8px;
+    background-position: 0 60%;
+    background-repeat: repeat-x;
+  }
+
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-bone);
+  }
+
+  /* Editorial photo treatment: silver-gelatin by default, colour on hover / when active. */
+  .noir-media {
+    filter: grayscale(1) contrast(1.12) brightness(0.82);
+    transition: filter 1.4s var(--ease-expo), transform 1.4s var(--ease-expo);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .group\/spread:hover .noir-media {
+      filter: grayscale(0) contrast(1.02) brightness(0.95);
+    }
+  }
+  @media (hover: none) {
+    .is-active .noir-media {
+      filter: grayscale(0) contrast(1.02) brightness(0.95);
+    }
+  }
+
+  .line-mask {
+    display: block;
+    overflow: clip;
+    overflow-clip-margin: 0.12em;
+    padding-bottom: 0.04em;
+  }
+}
+
+/* Film grain — the whole issue is printed on it. */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.075;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.9s steps(6) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -5%); }
+  60% { transform: translate(-6%, -2%); }
+  80% { transform: translate(5%, 4%); }
+  100% { transform: translate(-2%, 6%); }
+}
+
+@keyframes scroll-cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.scroll-cue {
+  animation: scroll-cue 2.4s var(--ease-quart) infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(0.4em); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.blink {
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .scroll-cue,
+  .blink {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
