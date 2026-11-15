@@ -23,7 +23,7 @@ export const links = {
   github: "https://github.com/PradhyumnaS",
   linkedin: "https://www.linkedin.com/in/pradhyumna-s-62956425b",
   // TODO: paste your résumé link here (Drive / PDF URL). The Résumé link stays hidden while this is empty.
-  resume: "",
+  resume: "https://drive.google.com/file/d/1yJdbCT-lrajkNYJIlx0ZFCycXnhd-9zd/view?usp=share_link",
 };
 
 export const sections = [
